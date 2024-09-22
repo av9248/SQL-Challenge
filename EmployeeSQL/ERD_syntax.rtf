@@ -9,7 +9,7 @@
 \f0\fs24 \cf2 \expnd0\expndtw0\kerning0
 Employees \
 -\
-emp_no INT PK FK >- Salaries.emp_no\
+emp_no INT PK\
 emp_title_id VARCHAR FK >- Titles.title_id\
 birth_date DATE\
 first_name VARCHAR\
@@ -20,25 +20,24 @@ hire_date DATE\
 \
 Departments \
 -\
-dept_no VARCHAR PK FK >- Dept_emp.dept_no\
+dept_no VARCHAR PK\
 dept_name VARCHAR\
 \
 \
 Dept_emp \
 -\
-emp_no INT FK >- Employees.emp_no\
-dept_no VARCHAR PK\
-\
+dept_no VARCHAR PK FK >- Departments.dept_no\
+emp_no INT PK FK >- Employees.emp_no\
 \
 Dept_manager \
 -\
 dept_no VARCHAR PK FK >- Departments.dept_no\
-emp_no INT FK >- Employees.emp_no\
+emp_no INT PK FK >- Employees.emp_no\
 \
 \
 Salaries \
 -\
-emp_no INT PK \
+emp_no INT PK FK >- Employees.emp_no\
 salary INT\
 \
 \
